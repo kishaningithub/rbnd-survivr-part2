@@ -30,7 +30,6 @@ class Jury
         max_votes = v
       end 
     end
-    puts "The winner is #{winner}."
     winner
   end
 end
