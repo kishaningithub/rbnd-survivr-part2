@@ -26,10 +26,18 @@ def put_new_lines(no_of_newlines)
     puts ""
   end
 end
+
+def print_header(header_str)
+  header_equalto = ("=" * header_str.size).blue
+  puts header_equalto
+  puts header_str.blue
+  puts header_equalto
+end
+  
 def begin_phase(phase_name, no_of_challenges, &block)
   if block
     put_new_lines(2)
-    puts "Let phase #{phase_name} begin.".blue
+    print_header "Let phase #{phase_name} begin."
     no_of_challenges.times do |i|
       puts "Round #{i+1}".yellow
       block.call
