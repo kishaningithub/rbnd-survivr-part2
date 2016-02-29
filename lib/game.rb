@@ -7,7 +7,10 @@ class Game
     @tribes << tribe
   end
   def immunity_challenge
-    @tribes[0]
+    tribes_len = @tribes.size
+    loosing_tribe = @tribes[rand(tribes_len)]
+    puts "Tribe #{loosing_tribe} lost the challenge."
+    loosing_tribe
   end
   def clear_tribes
     @tribes.clear
@@ -17,6 +20,8 @@ class Game
     Tribe.new(name:new_tribe_name, members: combined_members)
   end
   def individual_immunity_challenge
-    self.immunity_challenge.members[0]
+    immune_constestant = @tribes.first.members.shuffle.first
+    puts "#{immune_constestant} won the individual immunity challenge and is safe from elimiation."
+    immune_constestant
   end
 end

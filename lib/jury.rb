@@ -4,6 +4,7 @@ class Jury
     @members = []
   end
   def add_member(member)
+    puts "#{member} is member #{members.size + 1} of jury."
     @members << member
   end
   def cast_votes(finalists)
@@ -20,6 +21,7 @@ class Jury
   end
   def report_votes(votes)
     votes.each { |k,v| puts "#{k} received #{v} votes."}
+    puts ""
   end
   def announce_winner(final_votes)
     max_votes = 0
@@ -30,6 +32,7 @@ class Jury
         max_votes = v
       end 
     end
+    puts "The winner is #{winner}!"
     winner
   end
 end
