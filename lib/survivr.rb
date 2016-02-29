@@ -21,15 +21,19 @@ require_relative "jury"
 
 
 #This is where you will write your code for the three phases
+def put_new_lines(no_of_newlines)
+  no_of_newlines.times do
+    puts ""
+  end
+end
 def begin_phase(phase_name, no_of_challenges, &block)
   if block
-    puts ""
-    puts ""
+    put_new_lines(2)
     puts "Let phase #{phase_name} begin.".blue
     no_of_challenges.times do |i|
       puts "Round #{i+1}".yellow
       block.call
-      puts ""
+      put_new_lines(1)
     end
   end
   no_of_challenges
