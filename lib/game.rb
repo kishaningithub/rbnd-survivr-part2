@@ -21,7 +21,7 @@ class Game
   end
   def individual_immunity_challenge
     immune_constestant = @tribes.first.members.shuffle.first
-    puts "#{immune_constestant} won the individual immunity challenge and is safe from elimiation."
+    puts "#{immune_constestant} won the individual immunity challenge and is safe from elimiation.".green
     immune_constestant
   end
 end
